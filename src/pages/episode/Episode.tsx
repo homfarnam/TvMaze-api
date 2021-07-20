@@ -40,13 +40,20 @@ export const Episode = () => {
 
   return (
     <Layout>
-      <div className="w-full h-screen">
-        <Title name={episode?.name as string} />
+      <div className="container mx-auto">
+        <div className="w-full h-screen">
+          <Title name={episode?.name as string} />
 
-        <Image
-          url={episode?.image.medium as string}
-          alt={episode?.name as string}
-        />
+          <Image
+            url={episode?.image.medium as string}
+            alt={episode?.name as string}
+          />
+
+          <div
+            className="w-1/2 text-lg text-white flex justify-center items-center text-justify m-auto p-3"
+            dangerouslySetInnerHTML={{ __html: episode?.summary }}
+          />
+        </div>
       </div>
     </Layout>
   );
