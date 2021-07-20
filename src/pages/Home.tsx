@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { Image, Layout, TableData, Title } from "../components";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Image, Layout, TableData, Title } from '../components';
 
 type ShowTypes = {
   name: string;
@@ -22,20 +22,18 @@ function Home() {
 
   const getData = () => {
     axios
-      .get("https://api.tvmaze.com/shows/6771")
+      .get('https://api.tvmaze.com/shows/6771')
       .then((res) => res)
       .then((res) => {
-        console.log("data: ", res?.data);
         setShow(res?.data);
       });
   };
 
   const getEpisodes = () => {
     axios
-      .get("https://api.tvmaze.com/shows/6771/episodes")
+      .get('https://api.tvmaze.com/shows/6771/episodes')
       .then((res) => res)
       .then((res) => {
-        console.log("getEpisodes: ", res?.data);
         setEpisodesList(res?.data);
       });
   };
@@ -55,7 +53,7 @@ function Home() {
               alt={show?.name as string}
             />
             <div
-              className="w-1/2 flex justify-center items-center text-justify m-auto p-3"
+              className="w-1/2 text-white text-xl flex justify-center items-center text-justify m-auto p-3"
               dangerouslySetInnerHTML={{ __html: show?.summary }}
             />
 
