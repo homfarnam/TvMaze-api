@@ -67,7 +67,7 @@ const DataGridDemo: React.FC<DataProps> = ({ data }) => {
           </tbody>
         </MyTable>
       ) : (
-        'There are no data'
+        <p>There are no data</p>
       )}
     </div>
   );
