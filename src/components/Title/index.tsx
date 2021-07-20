@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface TitleProps {
   name: string;
@@ -6,9 +6,8 @@ interface TitleProps {
 
 const Title: React.FC<TitleProps> = ({ name }) => {
   return (
-    <div className="w-full flex justify-center items-center">
-      <span className="text-2xl">Title: </span>
-      <span className="text-2xl font-medium hover:text-gray-500">{name}</span>
+    <div className="w-full flex justify-center items-center my-5 ">
+      <span className="text-4xl font-medium"> {name}</span>
     </div>
   );
 };
