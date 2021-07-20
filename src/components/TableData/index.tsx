@@ -29,7 +29,7 @@ const DataGridDemo: React.FC<DataProps> = ({ data }) => {
   };
 
   return (
-    <div className="w-full flex justify-center my-10">
+    <div className="w-full flex justify-center my-10 px-5 md:px-0">
       {data?.length ? (
         <MyTable className="border border-black bg-yellow-300">
           <thead className="p-2">
