@@ -25,7 +25,6 @@ const DataGridDemo: React.FC<DataProps> = ({ data }) => {
   const history = useHistory();
 
   const handleClick = (item: { id: number }) => {
-    console.log('item: ', item);
     history.push(`/episode/${item.id}`);
   };
 
