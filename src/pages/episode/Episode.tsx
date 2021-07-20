@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { Image, Layout, Title } from 'components';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useEffect } from 'react';
-import { Router, useParams } from 'react-router';
+import { useParams } from 'react-router';
 
 type ShowTypes = {
   name: string;
