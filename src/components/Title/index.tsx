@@ -6,8 +6,8 @@ interface TitleProps {
 
 const Title: React.FC<TitleProps> = ({ name }) => {
   return (
-    <div className="w-full flex justify-center items-center my-5 ">
-      <span className="text-4xl font-medium"> {name}</span>
+    <div className="w-full flex justify-center items-center my-5 px-5 md:px-0">
+      <span className="text-4xl font-medium text-center"> {name}</span>
     </div>
   );
 };
