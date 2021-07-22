@@ -1,3 +1,4 @@
+import { EpisodesListType } from './../../types/types.d';
 import {
   createAsyncThunk,
   createSlice,
@@ -14,12 +15,7 @@ export const getEpisodes: any = createAsyncThunk('episodesData', async () => {
 });
 
 interface ShowTypes {
-  episodes: {
-    id: number;
-    name: string;
-    season: string;
-    number: number;
-  }[];
+  episodes: EpisodesListType;
   loading: boolean;
   hasErrors: boolean;
 }
