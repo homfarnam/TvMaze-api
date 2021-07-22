@@ -76,6 +76,8 @@ For the api, I used TV Maze API.
   GET https://api.tvmaze.com/shows/${id}
 ```
 
+You should the response like the below image.
+
 ![alt show_detao;s](./show.png)
 
 
@@ -87,6 +89,11 @@ For the api, I used TV Maze API.
   GET https://api.tvmaze.com/shows/${id}/episodes
 ```
 
+You should the response like the below image.
+
+![alt show_detao;s](./episodes.png)
+
+
  
 
 #### Get episode details
@@ -94,6 +101,10 @@ For the api, I used TV Maze API.
 ```http
   GET https://api.tvmaze.com/episodes/${id}
 ```
+
+You should the response like the below image.
+
+![alt show_detao;s](./episode.png)
 
 
  
