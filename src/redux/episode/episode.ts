@@ -69,5 +69,3 @@ export const episodeActions = episode.actions;
 export const episodesSelector = (state: ShowTypes) => state;
 
 export default episode.reducer;
-
-// export default episodesSlice.reducer;
