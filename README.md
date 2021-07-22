@@ -19,12 +19,12 @@ npm:
 cd TvMaze-api
 
 npm install
-  
 ```
+
 yarn:
+
 ```bash
 yarn
-  
 ```
     
 
@@ -38,16 +38,15 @@ yarn
 To Start this project run
 
 npm:
+
 ```bash
 npm run start
- 
 ```
 
 yarn:
 
 ```bash
 yarn start
-  
 ```
     
 
@@ -58,16 +57,12 @@ npm:
 
   ```bash
   npm run build
- 
-
 ```
 
 yarn:
 
 ```bash
 yarn build
-
-  
 ```
 
 
