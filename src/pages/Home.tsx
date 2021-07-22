@@ -49,8 +49,6 @@ function Home() {
   useEffect(() => {
     setEpisodesList(allData.episodes.episodes);
     setShow(allData.show.myShow as any);
-
-    console.log('allData: ', allData);
   }, [allData]);
 
   return (
