@@ -14,8 +14,6 @@ Install TvMaze-api with npm
 npm:
 
 ```bash
-cd TvMaze-api
-
 npm install
 ```
 
