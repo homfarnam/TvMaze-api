@@ -16,7 +16,7 @@ export const getEpisode: any = createAsyncThunk(
   }
 );
 
-interface ShowTypes {
+interface StateTypes {
   episode: {
     name: string;
     summary: any;
@@ -34,15 +34,15 @@ interface ShowTypes {
   hasErrors: boolean;
 }
 
-const initialState: ShowTypes = {
+const initialState: StateTypes = {
   episode: [],
   loading: false,
   hasErrors: false
 };
 
 export const episode: Slice<
-  ShowTypes,
-  SliceCaseReducers<ShowTypes>,
+  StateTypes,
+  SliceCaseReducers<StateTypes>,
   'episodeData'
 > = createSlice({
   name: 'episodeData',
@@ -66,6 +66,6 @@ export const episode: Slice<
 
 export const episodeActions = episode.actions;
 
-export const episodesSelector = (state: ShowTypes) => state;
+export const episodesSelector = (state: StateTypes) => state;
 
 export default episode.reducer;
