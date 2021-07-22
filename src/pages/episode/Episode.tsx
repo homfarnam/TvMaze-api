@@ -5,20 +5,7 @@ import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router';
 import { useAppSelector } from 'redux/hooks/hooks';
 import { getEpisode } from 'redux/episode/episode';
-
-type ShowTypes = {
-  name: string;
-  summary: any;
-  image: {
-    medium: string;
-    original: string;
-  };
-  _links: {
-    previousepisode: {
-      href: string;
-    };
-  };
-};
+import { ShowTypes } from 'types/types';
 
 export const Episode = () => {
   const [episode, setEpisode] = useState<ShowTypes>();

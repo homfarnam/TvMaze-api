@@ -1,16 +1,12 @@
 import * as React from 'react';
 import { useHistory } from 'react-router';
 import styled from 'styled-components';
+import { EpisodesListType } from 'types/types';
 
 // declare columns types
 
 interface DataProps {
-  data: {
-    id: number;
-    name: string;
-    season: string;
-    number: number;
-  }[];
+  data: EpisodesListType;
 }
 
 const MyTable = styled.table`

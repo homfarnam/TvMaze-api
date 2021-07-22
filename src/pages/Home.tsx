@@ -4,27 +4,7 @@ import { getData } from 'redux/showData';
 import { useAppSelector } from 'redux/hooks/hooks';
 import { useDispatch } from 'react-redux';
 import { getEpisodes } from 'redux/allEpisodes/allEpisodes';
-
-type ShowTypes = {
-  name: string;
-  summary: any;
-  image: {
-    medium: string;
-    original: string;
-  };
-  _links: {
-    previousepisode: {
-      href: string;
-    };
-  };
-};
-
-type EpisodesListType = {
-  id: number;
-  name: string;
-  season: string;
-  number: number;
-}[];
+import { EpisodesListType, ShowTypes } from 'types/types';
 
 function Home() {
   const [show, setShow] = useState<ShowTypes>();
