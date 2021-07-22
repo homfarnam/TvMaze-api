@@ -1,6 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useCallback, useEffect, useState } from 'react';
 import { Image, Layout, TableData, Title } from '../components';
+import { getData } from 'redux/showData';
+import { useAppSelector } from 'redux/hooks/hooks';
+import { useDispatch } from 'react-redux';
+import { getEpisodes } from 'redux/allEpisodes/allEpisodes';
 
 type ShowTypes = {
   name: string;
@@ -16,31 +19,40 @@ type ShowTypes = {
   };
 };
 
+type EpisodesListType = {
+  id: number;
+  name: string;
+  season: string;
+  number: number;
+}[];
+
 function Home() {
   const [show, setShow] = useState<ShowTypes>();
-  const [episodesList, setEpisodesList] = useState<string[]>([]);
 
-  const getData = () => {
-    axios
-      .get('https://api.tvmaze.com/shows/6771')
-      .then((res) => res)
-      .then((res) => {
-        setShow(res?.data);
-      });
-  };
+  const [episodesList, setEpisodesList] = useState<EpisodesListType>([]);
 
-  const getEpisodes = () => {
-    axios
-      .get('https://api.tvmaze.com/shows/6771/episodes')
-      .then((res) => res)
-      .then((res) => {
-        setEpisodesList(res?.data);
-      });
-  };
+  // const { myShow, loading, hasErrors } = useSelector(showSelector);\
+
+  const allData = useAppSelector((state) => state);
+
+  const dispatch = useDispatch();
+
+  const getEpisodesData = useCallback(async () => {
+    await dispatch(getData());
+    await dispatch(getEpisodes());
+  }, [dispatch]);
+
   useEffect(() => {
-    getData();
-    getEpisodes();
-  }, []);
+    getEpisodesData();
+  }, [getEpisodesData]);
+
+  useEffect(() => {
+    setEpisodesList(allData.episodes.episodes);
+    setShow(allData.show.myShow as any);
+
+    console.log('allData: ', allData);
+  }, [allData]);
+
   return (
     <Layout>
       <div className="container mx-auto">
@@ -49,7 +61,7 @@ function Home() {
             <Title name={show?.name as string} />
 
             <Image
-              url={show?.image.medium as string}
+              url={show?.image?.medium as string}
               alt={show?.name as string}
             />
             <div
