@@ -5,7 +5,12 @@ import styled from 'styled-components';
 // declare columns types
 
 interface DataProps {
-  data: any;
+  data: {
+    id: number;
+    name: string;
+    season: string;
+    number: number;
+  }[];
 }
 
 const MyTable = styled.table`
