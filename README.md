@@ -1,4 +1,3 @@
-
 # TV show
 
 This app shows all episodes of "Powerpuff Girls" TV show and the episode page.
@@ -8,7 +7,6 @@ This app shows all episodes of "Powerpuff Girls" TV show and the episode page.
 You can see the demo here:
 https://tv-maze-api.vercel.app/
 
-  
 ## Installation
 
 Install TvMaze-api with npm
@@ -26,14 +24,8 @@ yarn:
 ```bash
 yarn
 ```
-    
 
- 
 ## Deployment
-
-
-
-
 
 To Start this project run
 
@@ -48,15 +40,13 @@ yarn:
 ```bash
 yarn start
 ```
-    
 
-  
-  To build the project run:
+To build the project run:
 
-npm: 
+npm:
 
-  ```bash
-  npm run build
+```bash
+npm run build
 ```
 
 yarn:
@@ -64,7 +54,6 @@ yarn:
 ```bash
 yarn build
 ```
-
 
 ## API Reference
 
@@ -78,10 +67,7 @@ For the api, I used TV Maze API.
 
 You should the response like the below image.
 
-![alt show_detao;s](./show.png)
-
-
- 
+![alt show_details](./show.png)
 
 #### Get TV show Episodes
 
@@ -91,10 +77,7 @@ You should the response like the below image.
 
 You should the response like the below image.
 
-![alt show_detao;s](./episodes.png)
-
-
- 
+![alt episodes](./episodes.png)
 
 #### Get episode details
 
@@ -104,9 +87,4 @@ You should the response like the below image.
 
 You should the response like the below image.
 
-![alt show_detao;s](./episode.png)
-
-
- 
-  
-
+![alt episode](./episode.png)
