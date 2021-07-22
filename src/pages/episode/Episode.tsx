@@ -1,8 +1,10 @@
-import axios from 'axios';
 import { Image, Layout, Title } from 'components';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router';
+import { useAppSelector } from 'redux/hooks/hooks';
+import { getEpisode } from 'redux/episode/episode';
 
 type ShowTypes = {
   name: string;
@@ -22,21 +24,22 @@ export const Episode = () => {
   const [episode, setEpisode] = useState<ShowTypes>();
 
   const { id }: any = useParams();
-  console.log('id: ', id);
 
-  const getEpisode = (epId: number) => {
-    axios
-      .get(`https://api.tvmaze.com/episodes/${epId}`)
-      .then((res) => res)
-      .then((res) => {
-        setEpisode(res?.data);
-      })
-      .catch((err) => console.log(err));
-  };
+  const allData = useAppSelector((state) => state);
+
+  const dispatch = useDispatch();
+
+  const getEpisodeData = useCallback(async () => {
+    await dispatch(getEpisode(id));
+  }, [dispatch, id]);
 
   useEffect(() => {
-    getEpisode(id);
-  }, [id]);
+    getEpisodeData();
+  }, [getEpisodeData]);
+
+  useEffect(() => {
+    setEpisode(allData.episode.episode as any);
+  }, [allData]);
 
   return (
     <Layout>
@@ -45,7 +48,7 @@ export const Episode = () => {
           <Title name={episode?.name as string} />
 
           <Image
-            url={episode?.image.medium as string}
+            url={episode?.image?.medium as string}
             alt={episode?.name as string}
           />
 
