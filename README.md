@@ -76,6 +76,9 @@ For the api, I used TV Maze API.
   GET https://api.tvmaze.com/shows/${id}
 ```
 
+![alt show_detao;s](./show.png)
+
+
  
 
 #### Get TV show Episodes
