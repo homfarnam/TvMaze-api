@@ -13,14 +13,18 @@ https://tv-maze-api.vercel.app/
 
 Install TvMaze-api with npm
 
+npm:
+
 ```bash
 cd TvMaze-api
 
 npm install
-or
-yarn 
+```
 
-  
+yarn:
+
+```bash
+yarn
 ```
     
 
@@ -33,22 +37,35 @@ yarn
 
 To Start this project run
 
+npm:
+
 ```bash
 npm run start
-or
-yarn start
-
 ```
+
+yarn:
+
+```bash
+yarn start
+```
+    
 
   
   To build the project run:
 
+npm: 
+
   ```bash
   npm run build
-  or
-  yarn build
-
 ```
+
+yarn:
+
+```bash
+yarn build
+```
+
+
 ## API Reference
 
 For the api, I used TV Maze API.
